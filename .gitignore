@@ -1,0 +1,6 @@
+config.json
+logger.py
+search.py
+downloads/
+tests/
+__pycache__/
