@@ -21,11 +21,11 @@ def get_args():
     parser.add_argument(
         "-s",
         "--search",
-        help="Search videos for download by title/request",
+        help="[COMING SOON]Search videos for download by title/request",
         action="store_true",
     )
     parser.add_argument(
-        "--info", help="Only show video information", action="store_true"
+        "--info", help="[COMING SOON] Only show video information", action="store_true"
     )
     parser.add_argument("--preset", help="Use selected preset", action="store_true")
 

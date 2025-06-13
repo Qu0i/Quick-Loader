@@ -3,11 +3,20 @@ from parser import get_args
 import yt_dlp
 from downloader import downloadMP3, downloadMP4
 import sys
+import shutil
+import sys
 
+def check_ffmpeg():
+    if shutil.which("ffmpeg") is None:
+        print("❌ 'ffmpeg' is not installed or not found in your system PATH.")
+        print("Please install it: https://ffmpeg.org/download.html")
+        sys.exit(1)
 
 def main():
+    check_ffmpeg()
+
     args = get_args()
-    qlversion = "v0.01"
+    qlversion = "v0.1.0"
 
     args = get_args()
 
