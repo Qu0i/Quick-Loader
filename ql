@@ -1,40 +1,49 @@
 #!/usr/bin/env python3
-from parser import get_args
 import yt_dlp
-from downloader import downloadMP3, downloadMP4
 import sys
 import shutil
 import sys
 
+from downloader import downloadMP3, downloadMP4
+from parser import get_args
+from download_playlist import downloadPlaylist
+
+
 def check_ffmpeg():
     if shutil.which("ffmpeg") is None:
-        print("❌ 'ffmpeg' is not installed or not found in your system PATH.")
+        print("[ERROR] 'ffmpeg' is not installed or not found in your system PATH.")
         print("Please install it: https://ffmpeg.org/download.html")
         sys.exit(1)
+
 
 def main():
     check_ffmpeg()
 
     args = get_args()
-    qlversion = "v0.1.0"
-
-    args = get_args()
+    qlversion = "v0.2.0"
 
     if args.version:
-        print(f"QuickLoader (ql) {qlversion}")
+        print(f"Quick-Loader (ql) {qlversion}")
         sys.exit(0)
 
     if not args.link and not any([args.search, args.preset, args.info]):
-        parser.print_help()
+        print(f"Quick-Loader (ql) {qlversion}")
+        print("[ERROR]: No link or action specified.")
         sys.exit(1)
 
     link = args.link
     path = args.output
-
-    if args.format == "mp4":
-        downloadMP4(f"{link}", f"{path}")
-    elif args.format == "mp3":
-        downloadMP3(f"{link}", f"{path}")
+    fmt = args.format
+    
+    if args.playlist:
+        downloadPlaylist(link, fmt, path)
+    elif fmt == "mp4":
+        downloadMP4(link, path)
+    elif fmt == "mp3":
+        downloadMP3(link, path)
+    else:
+        print(f"[ERROR]: Unknown format '{fmt}'")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

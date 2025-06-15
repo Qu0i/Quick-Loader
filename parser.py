@@ -27,6 +27,13 @@ def get_args():
     parser.add_argument(
         "--info", help="[COMING SOON] Only show video information", action="store_true"
     )
-    parser.add_argument("--preset", help="Use selected preset", action="store_true")
+    parser.add_argument(
+        "--preset", help="[COMING SOON] Use selected preset", action="store_true"
+    )
+    parser.add_argument("-ss", "--start", help="", action=("store_true"))
+    parser.add_argument("-to", "--end", help="", action="store_true")
+    parser.add_argument(
+        "-p", "--playlist", help="Download  a full playlist", action="store_true"
+    )
 
     return parser.parse_args()

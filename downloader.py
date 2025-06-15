@@ -6,7 +6,7 @@ import os
 cwd = os.getcwd()
 args = get_args()
 
-def downloadMP4(URL, path=None):
+def downloadMP4(URL: str, path: str=None):
     if path:
         output_template = f"{path}/%(title)s.%(ext)s"
     else:
@@ -33,7 +33,7 @@ def downloadMP4(URL, path=None):
         downloaded_file = f"{title}.mp4"
 
 
-def downloadMP3(URL, path=None):
+def downloadMP3(URL: str, path: str=None):
     if path:
         output_template = f"{path}/%(title)s.%(ext)s"
     else:
@@ -48,7 +48,7 @@ def downloadMP3(URL, path=None):
             {
                 "key": "FFmpegExtractAudio",
                 "preferredcodec": "mp3",
-                "preferredquality": "192", 
+                "preferredquality": "192",
             }
         ],
         "quiet": False,
@@ -61,4 +61,5 @@ def downloadMP3(URL, path=None):
         info = ydl.extract_info(URL, download=True)
         title = info.get("title", "audio")
         downloaded_file = f"{title}.mp4"
+
 
