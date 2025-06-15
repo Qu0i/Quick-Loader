@@ -18,8 +18,6 @@ def main():
     args = get_args()
     qlversion = "v0.1.0"
 
-    args = get_args()
-
     if args.version:
         print(f"QuickLoader (ql) {qlversion}")
         sys.exit(0)
