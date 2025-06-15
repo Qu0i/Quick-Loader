@@ -62,8 +62,9 @@ ql "https://youtu.be/dQw4w9WgXcQ?si=kWTZwI5JS3TUi3Rx" -f mp3 -r 720p -o ~/Downlo
 ## 🔍 Roadmap
 
 - [x] Basic download support
-- [ ] Playlist download support _(planned)_
+- [x] Playlist download support
 - [ ] Support for downloading specific parts of videos _(planned)_
+- [ ] 
 
 ---
 
