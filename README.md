@@ -52,10 +52,11 @@ ql "https://youtu.be/dQw4w9WgXcQ?si=kWTZwI5JS3TUi3Rx" -f mp3 -r 720p -o ~/Downlo
 
 | Flag                 | Description                          | Example       |
 | -------------------- | ------------------------------------ | ------------- |
-| `-f`, `--format`     | Download format (`mp3`, `mp4`, etc.) | `-f mp4`      | |
+| `-f`, `--format`     | Download format (`mp3`, `mp4`, etc.) | `-f mp4`      |
 | `-o`, `--output`     | Output file path                     | `-o ~/Videos` |
-| `--version`    | Show current version                 | `--version`   |
-| `-v`, `--video`     | Download video only `(without audio)` | `-v`      | |
+| `--version`          | Show current version                 | `--version`   |
+| `-v`, `--video`      | Download video only `(without audio)`| ql url `-v`   |
+| `-p`, `--playlist`   | Download  a full playlist            | ql url `-p`   |
 
 ---
 
@@ -64,7 +65,7 @@ ql "https://youtu.be/dQw4w9WgXcQ?si=kWTZwI5JS3TUi3Rx" -f mp3 -r 720p -o ~/Downlo
 - [x] Basic download support
 - [x] Playlist download support
 - [ ] Support for downloading specific parts of videos _(planned)_
-- [ ] 
+- [ ] Support for excluding some videos from the downloaded playlist (by author/title/(possibly)keywords) _(planned)_
 
 ---
 
